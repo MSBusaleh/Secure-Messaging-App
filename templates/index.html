@@ -1,1 +1,32 @@
-<!--Step 1 - By Mohammed-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Messaging</title>
+    <link href="static/styles.css" rel="stylesheet"> 
+</head>
+<body>
+    <div class="container">
+        <!-- Send Panel -->
+        <div class="panel">
+            <h1 class="panel-title">Send</h1>
+            <textarea 
+                class="input-area" 
+                id="messageInput" 
+                placeholder="Type your message here..."
+                rows="5"
+            ></textarea>
+            <button class="btn" onclick="encryptAndSend()">Encrypt & Send</button>
+        </div>
+
+        <!-- Receive Panel -->
+        <div class="panel">
+            <h1 class="panel-title">Receive</h1>
+            <div class="message-display" id="messageDisplay">Messages</div>
+            <button class="btn" onclick="decryptAndVerify()">Decrypt & Verify</button>
+            <div class="result-display" id="resultDisplay">Result of Dec/Verify</div>
+        </div>
+    </div>
+</body>
+</html>
