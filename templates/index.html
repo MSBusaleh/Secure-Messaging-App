@@ -11,14 +11,24 @@
         <!-- Send Panel -->
         <div class="panel">
             <h1 class="panel-title">Send</h1>
-            <textarea 
-                class="input-area" 
-                id="messageInput" 
-                placeholder="Type your message here..."
-                rows="5"
-            ></textarea>
-            <button class="btn" onclick="encryptAndSend()">Encrypt & Send</button>
-            <div class="result-display" id="encryptedDisplay">Encrypted Message</div>
+            <form method="POST" action="/encrypt">
+                <textarea 
+                    class="input-area" 
+                    id="messageInput" 
+                    placeholder="Type your message here..."
+                    rows="5"
+                    name="message"
+                ></textarea>
+                <button class="btn" Type="submit">Encrypt & Send</button>
+            </form>
+
+            <div class="result-display" id="encryptedDisplay">
+                {% if ciphertext %}
+                    <p>{{ciphertext}}</p>
+                {% else %}
+                    <p>Encrypted message will appear here.</p>
+                {% endif %}
+            </div>
         </div>
 
         <!-- Receive Panel -->
